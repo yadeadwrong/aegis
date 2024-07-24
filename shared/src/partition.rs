@@ -210,7 +210,7 @@ fn partition_with_efi(device: &Path, swap: bool, swap_size: String) {
                 String::from("ESP"),
                 String::from("fat32"),
                 String::from("1MiB"),
-                String::from("512MiB"),
+                String::from("1024MiB"),
             ],
         ),
         "create EFI partition",
