@@ -233,7 +233,7 @@ fn partition_with_efi(device: &Path, swap: bool, swap_size: String) {
     let boundary_partition_size = if swap {
         swap_size
     } else {
-        String::from("512MiB")
+        String::from("1024MiB")
     };
     if swap {
         exec_eval(
@@ -246,7 +246,7 @@ fn partition_with_efi(device: &Path, swap: bool, swap_size: String) {
                     String::from("mkpart"),
                     String::from("swap"),
                     String::from("linux-swap"),
-                    String::from("512MiB"),
+                    String::from("1024MiB"),
                     String::from(&boundary_partition_size),
                 ],
             ),
@@ -298,7 +298,7 @@ fn partition_no_efi(device: &Path, swap: bool, swap_size: String) {
                 String::from("primary"),
                 String::from("ext4"),
                 String::from("1MiB"),
-                String::from("512MiB"),
+                String::from("1024MiB"),
             ],
         ),
         "create bios boot partition",
@@ -306,7 +306,7 @@ fn partition_no_efi(device: &Path, swap: bool, swap_size: String) {
     let boundary_partition_size = if swap {
         swap_size
     } else {
-        String::from("512MiB")
+        String::from("1024MiB")
     };
 
     if swap {
@@ -320,7 +320,7 @@ fn partition_no_efi(device: &Path, swap: bool, swap_size: String) {
                     String::from("mkpart"),
                     String::from("primary"),
                     String::from("linux-swap"),
-                    String::from("512MiB"),
+                    String::from("1024MiB"),
                     String::from(&boundary_partition_size),
                 ],
             ),
